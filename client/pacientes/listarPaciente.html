@@ -1,0 +1,50 @@
+<template name="listarPaciente">
+	
+	<table class="table table-striped">
+		<caption><h4>Listado de pacientes</h4><a href="{{pathFor 'formPaciente'}}" class="btn btn-info"><i class="fa fa-plus"></i> Nuevo Paciente</a></caption>
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Fecha Nac.</th>
+				<th>Sexo</th>
+				<th>Estado Civil</th>
+				<th>Email</th>
+				<th>Dirección</th>
+				<th>Estado</th>
+				<th>Ciudad</th>
+				<th>Ocupación</th>
+				<th>Observaciones</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each pacientes}}
+				{{> paciente}}
+			{{/each}}
+		</tbody>
+	</table>
+	<div class="">
+    {{#if currentUser}}
+    	{{currentUser.profile.apellidos}}
+    {{/if}}
+  </div>
+</template>
+
+<template name="paciente">
+	<tr class="{{#if estatus}}danger{{/if}}">
+		<td><a href="{{pathFor 'verPaciente'}}">{{nombre}} {{apellidos}}</a></td>
+		<td class="col-lg-1">{{formatDate fechaNac}}</td>
+		<td>{{sexo}}</td>
+		<td>{{edoCivil}}</td>
+		<td>{{email}}</td>
+		<td>{{direccion}}</td>
+		<td>{{estado}}</td>
+		<td>{{ciudad}}</td>
+		<td>{{ocupacion}}</td>		
+		<td>{{observaciones}}</td>
+		<td>
+			<a href="#" class="delete"><i class="fa fa-remove"></i></a>
+			<a href="#" class="update"><i class="fa fa-pencil"></i></a>
+		</td>
+	</tr>
+</template>

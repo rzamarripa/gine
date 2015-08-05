@@ -1,0 +1,50 @@
+<template name="heredoFamiliares">
+	<a class="btn btn-primary btn-block" role="button" data-toggle="collapse" href="#heredoFamiliares" aria-expanded="false" aria-controls="collapseExample">
+	  Antecedentes Heredo-Familiares
+	</a>
+	<div class="collapse" id="heredoFamiliares">
+		<div class="row">			
+			<div class="col-lg-12">
+				<div class="funkyradio">
+					<div class="funkyradio-primary">
+						<div class="row">
+							<div class="col-lg-3">
+								<input type="checkbox" name="checkbox" class="diabetes" id="diabetes" ng-model="diabetes" />
+								<label for="diabetes">Diabetes</label>
+							</div>
+							<div class="col-lg-9">
+								<textarea style="margin-top: 20px;" class="form-control " ng-model="hola" rows="2" 
+													placeholder="Descripción para Diabetes" name="diabetes" id="diabetesDesripcion" ng-readonly="{{diabetes}}"></textarea>
+								{{hola}}
+							</div>
+						</div>
+					</div>
+					<hr/>	
+		      <div class="funkyradio-primary">
+			      <div class="row">
+			      	<div class="col-lg-3">
+			      		<input type="checkbox" name="checkbox" class="diabetes" id="diabetes" />
+								<label for="diabetes">Diabetes</label>
+			      	</div>
+			      	<div class="col-lg-6">
+			      		<textarea class="form-control " rows="2" placeholder="Descripción para Diabetes" name="diabetes" id="diabetes"></textarea>
+			      	</div>
+			      </div>
+		      </div>
+		      <div class="funkyradio-primary">
+		          <input type="checkbox" name="checkbox" class="hipertension" id="hipertension" />
+		          <label for="hipertension">Hipertensión</label>
+		      </div>
+		      <div class="funkyradio-primary">
+		          <input type="checkbox" name="checkbox" class="cancer" id="cancer" />
+		          <label for="cancer">Cáncer</label>
+		      </div>
+		      <div class="funkyradio-primary">
+		          <input type="checkbox" name="checkbox" class="otros" id="otrosHeredo" />
+		          <label for="otrosHeredo">Otros</label>
+		      </div>
+		  	</div>
+			</div>
+		</div>	  
+	</div>
+</template>
